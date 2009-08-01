@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090615062618) do
+ActiveRecord::Schema.define(:version => 20090702033132) do
 
   create_table "users", :force => true do |t|
     t.string   "first"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(:version => 20090615062618) do
     t.string   "evephone"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "login"
+    t.string   "password"
+    t.string   "password_confirmation"
+    t.string   "crypted_password",          :limit => 40
+    t.string   "salt",                      :limit => 40
+    t.string   "remember_token"
+    t.datetime "remember_token_expires_at"
   end
 
 end
